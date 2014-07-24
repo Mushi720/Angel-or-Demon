@@ -1,0 +1,95 @@
+{
+    "st1" : {
+    	"PolicialA": ["O doido tava", "la no beco", "da chave"],
+    	"PolicialB": ["Tava doidao", "mermo o cara,", "muito doido"],
+	"Testemunha": ["Eh tudo verdade"],
+    	"Suspeito": ["Mermao", "esses baguio", "ne meu nao"],
+        "Pertences": [1,2],
+        "Inocente": "False",
+        "Info" : ["Carlos Miller", "23 anos", "Preso anteriomente por trafico de drogas", "Os pais foram mortos na frente dele em 1994", "Esteve um tempo na FUNASE"]
+	},
+    "st2" : {
+    	"PolicialA": ["Ele estava", "perambulando pela", "rua"],
+        "PolicialB": ["Muito suspeito,", "Resolvemos traze-lo", "para averiguar"],
+	"Testemunha": ["Eh tudo verdade"],
+        "Suspeito": ["Eu juro que nao", "fiz nada de errado"],
+        "Pertences": [1],
+        "Inocente": "True",
+        "Info" : ["Jorge Matheus", "21 anos", "Nada consta"]
+	},
+    "st3" : {
+        "PolicialA": ["O meliante foi", "flagrado assaltando", "uma senhora"],
+        "PolicialB": ["Ele estava", "armado"],
+	"Testemunha": ["Eh tudo verdade"],
+        "Suspeito": ["Bixo, tu ta ligado", "que eu sou do PCC", "otario. E bom tu", "me solta"],
+        "Pertences": [1,2,3],
+        "Inocente": "False",
+        "Info" : ["Jorge Carlos", "18 anos", "Fugido do Cotel desde o ultimo dia das maes", "Passou um tempo na FUNASE"]
+    },
+    "st4" : {
+        "PolicialA": ["Traficando maconha", "na favela da", "saramandaia"],
+        "PolicialB": ["Achamos que ele eh", "do PCC. Esses,", "caras estao", "dominando", "o Arruda." ],
+	"Testemunha": ["Eh tudo verdade"],
+        "Suspeito": ["Mermao esses 8 kilo", "eh pra consumo", "propio na moral", "poh eu sou", "aviciado mermo"],
+        "Pertences": [1,2, 3],
+        "Inocente": "False",
+        "Info" : ["Charlison Franks", "25 anos", "Preso anteriomente por trafico de drogas"]
+    },
+    "st5" : {
+        "PolicialA": ["Foi acusado", "de roubo pelo", "povo do mercadinho"],
+        "PolicialB": ["A gente achou ele", "em Maranguape"],
+	"Testemunha": ["Eh tudo verdade"],
+        "Suspeito": ["Pelo amor de Deus", "doutor, eu", "abandonei essa", "vida. Eu virei", "crente"],
+        "Pertences": [1],
+        "Inocente": "True",
+        "Info" : ["Jardikley Ferdinando", "29 anos", "Compriu pena por roubo"]
+    },
+    "st6" : {
+        "PolicialA": ["Traficante da Jao", "Muito perigoso"],
+        "PolicialB": ["O cara canta", "altos Rap"],
+	"Testemunha": ["Eh tudo verdade"],
+        "Suspeito": ["Alemao eh o Borel", "e nao us pulicais", "que ganhar Ibopi", "Com o som de", "Leozinho e Taz"],
+        "Pertences": [1,2],
+        "Inocente": "False",
+        "Info" : ["Leonardo Perira", "28 anos", "Fugido da PAI"]
+    },
+    "st7" : {
+        "PolicialA": ["O filhinho de", "papai tava", "maconhado"],
+        "PolicialB": ["Tava se esfregando", "nas menina que", "passava"],
+	"Testemunha": ["Eh tudo verdade"],
+        "Suspeito": ["Eu quero", "mainha", "mainhaaaa"],
+        "Pertences": [1,3],
+        "Inocente": "False",
+        "Info" : ["Jorge Dubeux", "23 anos", "Nada consta"]
+    },
+    "st8" : {
+        "PolicialA": ["Estava batendo", "na mulher"],
+        "PolicialB": ["7 coranhada", "na bixinha,", "fiquei cu pena"],
+	"Testemunha": ["Eh tudo verdade"],
+        "Suspeito": ["Chego em casa", "num tem um cuzcuz", "ai tem que apanhar"],
+        "Pertences": [1,2],
+        "Inocente": "False",
+        "Info" : ["Arlison Ferreira", "49 anos", "Nada consta"]
+    },
+    "st9" : {
+        "PolicialA": ["Comeu o coracao", "do outro cum", "farinha"],
+        "PolicialB": ["O bixo eh ruim", "mermo. Matador"],
+	"Testemunha": ["Eh tudo verdade"],
+        "Suspeito": ["Eu queria mudar", "o mundo me insinou", "ser assim fazer as", "correria e os cana", "vir atras de mim"],
+        "Pertences": [1,2,3,4],
+        "Inocente": "False",
+        "Info" : ["Ixuru da Silva", "29 anos", "Preso anteriomente por 32 homicidios", "Tem um cabelo To Night"]
+    },
+    "st10" : {
+        "PolicialA": ["Estuprador"],
+        "PolicialB": ["Foi o pessoal que", "disse"],
+	"Testemunha": ["Eh tudo verdade"],
+        "Suspeito": ["Doutor eh mentira", "eu juro que nao", "fiz isso nao"],
+        "Pertences": [1],
+        "Inocente": "True",
+        "Info" : ["Marcelo Campos", "65 anos", "Nada consta"]
+    }
+}
+
+
+
