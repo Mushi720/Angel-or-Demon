@@ -56,7 +56,22 @@ class GameStatus():
     def getWitnessChanged(self):
         return self.witnessChanged
     def setWitnessChanged(self, value):
-        self.witnessChanged = value 
+        self.witnessChanged = value
+    def getTrack(self):
+        return self.track
+    def setTrack(self, value):
+        self.track = value
+    def getRadioStatus(self):
+        return self.radioStatus
+    def setRadioStatus(self, value):
+        self.radioStatus = value
+    def song():
+        #Sound
+        pygame.mixer.init()
+        pygame.mixer.music.load("BGM/"+str(game.getTrack())+".mp3")
+        pygame.mixer.music.play()
+        pygame.event.wait()
+        game.setTrack()
         
 #Set Initial Classes     
 game = GameStatus()
@@ -68,6 +83,8 @@ game.setMoney(3000)
 game.setInjustice(0)
 game.setStatusDialog(0)
 game.setWitnessChanged(True)
+game.setTrack(1)
+game.setRadioStatus(False)
 
 #Load Json 
 file = open("script.txt", "r")
@@ -121,6 +138,13 @@ class GameScreen:
         missao = "st"+ str(game.getMissao())
         #Table
         pygame.draw.rect(screen,BLACK,[200,350,500,150], 5)
+        #Radio
+        pygame.draw.rect(screen,BLACK,[230,380,100,80])
+        pygame.draw.rect(screen,BLUE,[240,390,70,20])
+        rew = pygame.draw.circle(screen, WHITE, (250, 430), 5)
+        play = pygame.draw.circle(screen, GREEN, (265, 430), 5)
+        ff = pygame.draw.circle(screen, WHITE, (280, 430), 5)
+        stop = pygame.draw.circle(screen, RED, (295, 430), 5)
         #Suspeito
         pygame.draw.rect(screen,GREEN,[400,200,100,150])
         suspect = pygame.draw.circle(screen, SKIN, (450, 160), 40)
@@ -178,7 +202,7 @@ class GameScreen:
             text = font.render("Testemunha",True,GRAY)
         screen.blit(text, [40, 210])        
         #Basket
-        basket = pygame.draw.rect(screen,BLACK,[250,380,50,90],5)
+        basket = pygame.draw.rect(screen,BLACK,[350,380,50,90],5)
         #Computer
         pygame.draw.rect(screen,BLACK,[550,355,80,80],5)
         computerScreen = pygame.draw.rect(screen,BLUE,[565,370,50,50])
@@ -227,13 +251,45 @@ class GameScreen:
             #witness
             if (witness.collidepoint(pos)):
                 pygame.time.wait(1000)
-                if (game.getMoney() > 0 and game.getWitnessChanged()==True):
-                    game.setWitnessChanged(False)
-                    game.setMoney(game.getMoney() - 1000)
+                if (game.getMoney() > 0):
                     self.person = 'Testemunha'
+                    if (game.getWitnessChanged()==True):
+                        game.setWitnessChanged(False)
+                        game.setMoney(game.getMoney() - 1000)
+                    
             #suspect
             if (suspect.collidepoint(pos)):
-                self.person = 'Suspeito'            
+                self.person = 'Suspeito'
+            #play
+            if (play.collidepoint(pos)):
+                pygame.time.wait(1000)
+                game.setRadioStatus(True)
+                pygame.mixer.music.load("BGM/"+str(game.getTrack())+".mp3")
+                pygame.mixer.music.play()
+            #rew
+            if (rew.collidepoint(pos)):
+                pygame.time.wait(1000)
+                if(game.getTrack()==1):
+                    game.setTrack(3)
+                else:
+                    game.setTrack(game.getTrack()-1)
+                pygame.mixer.music.load("BGM/"+str(game.getTrack())+".mp3")
+                pygame.mixer.music.play()
+            #stop
+            if (stop.collidepoint(pos)):
+                pygame.time.wait(1000)
+                game.setRadioStatus(False)
+                
+            #ff
+            if (ff.collidepoint(pos)):
+                pygame.time.wait(1000)
+                if(game.getTrack()==3):
+                    game.setTrack(1)
+                else:
+                    game.setTrack(game.getTrack()+1)
+                print(game.getTrack())
+                pygame.mixer.music.load("BGM/"+str(game.getTrack())+".mp3")
+                pygame.mixer.music.play()
         
         if self.person != "":        
             self.printOnWindow()
@@ -396,13 +452,6 @@ gameScreen = GameScreen()
 resultScreen = ResultScreen()
 messageScreen = MessageScreen()
 
-"""
-#Sound
-pygame.mixer.init()
-pygame.mixer.music.load("music.mp3")
-pygame.mixer.music.play()
-"""
-
 #Main loop
 while not done:
     #Exit event
@@ -413,6 +462,15 @@ while not done:
     #To fill the screen
     screen.fill(WHITE)
     
+    #Radio Songs
+    if game.getRadioStatus() == True and not pygame.mixer.music.get_busy():
+        if game.getTrack() < 3:
+            game.setTrack(game.getTrack()+1)
+        else:
+            game.setTrack(1)
+        pygame.mixer.music.load("BGM/"+str(game.getTrack())+".mp3")
+        pygame.mixer.music.play()
+            
     if game.getStatus() == 1:
         homeScreen.screen()
     if game.getStatus() == 2:
